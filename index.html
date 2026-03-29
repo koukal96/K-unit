@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="cs" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-UNIT | Dotační architektura pro e-mobility</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #050505; margin: 0; padding: 0; }
+        .neon-text { text-shadow: 0 0 10px rgba(34, 197, 94, 0.8); }
+        .electric-gradient { background: linear-gradient(135deg, #0f172a 0%, #050505 100%); }
+        .lightning-bg { background-image: radial-gradient(circle at 50% -20%, rgba(34, 197, 94, 0.15) 0%, transparent 50%); }
+    </style>
+</head>
+<body class="text-white">
+
+    <nav class="fixed w-full z-50 bg-black/90 backdrop-blur-md border-b border-white/10 px-4 py-3">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="text-xl md:text-2xl font-black italic uppercase tracking-tighter">
+                K-<span class="text-green-500">UNIT</span>
+            </div>
+            <a href="#kontakt" class="bg-green-600 text-black px-4 py-1.5 rounded-full font-black text-[10px] md:text-xs uppercase tracking-tighter transition shadow-[0_0_15px_rgba(34,197,94,0.4)]">
+                KONZULTACE
+            </a>
+        </div>
+    </nav>
+
+    <header class="relative min-h-screen flex items-center pt-24 pb-12 px-6 lightning-bg overflow-hidden">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center relative z-10 w-full">
+            <div>
+                <div class="inline-block px-3 py-1 border border-green-500/50 rounded-full text-green-500 text-[10px] font-bold uppercase tracking-widest mb-6 bg-green-500/10">
+                    DOTAČNÍ SPECIALIZACE 2026
+                </div>
+                <h1 class="text-3xl md:text-7xl font-black mb-6 leading-tight uppercase italic break-words">
+                    ZÍSKEJTE AŽ <br>
+                    <span class="text-green-500 neon-text">2,5 MILIONU KČ</span> <br>
+                    NA ELEKTROKAMION
+                </h1>
+                <p class="text-base md:text-xl text-gray-400 mb-8 max-w-lg leading-relaxed">
+                    Kompletní dotační architektura pro e-mobility. Vyřídíme technickou dokumentaci, vy modernizujete flotilu.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#kontakt" class="bg-white text-black px-8 py-4 rounded-xl font-black text-center text-base uppercase italic hover:bg-green-500 transition shadow-xl">
+                        MÁM ZÁJEM
+                    </a>
+                    <div class="flex items-center justify-center md:justify-start space-x-3 px-2 text-gray-400">
+                        <i class="fas fa-bolt text-green-500 animate-pulse"></i>
+                        <span class="text-[10px] md:text-sm font-bold uppercase tracking-wider">VÝZVA TRANSCOM 2/2026</span>
+                    </div>
+                </div>
+            </div>
+            <div class="relative w-full">
+                <img src="https://img.freepik.com/free-photo/view-modern-electric-truck_23-2150654058.jpg" alt="Electric Truck" class="relative rounded-2xl border border-green-500/30 grayscale hover:grayscale-0 transition duration-700 w-full object-cover">
+            </div>
+        </div>
+    </header>
+
+    <section id="vyhody" class="py-16 bg-black px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-6">
+            <div class="p-8 bg-white/5 border border-white/5 rounded-2xl">
+                <i class="fas fa-chart-line text-green-500 text-3xl mb-4"></i>
+                <h3 class="text-xl font-black mb-2 uppercase italic">Financování</h3>
+                <p class="text-sm text-gray-400">Až 50 % uznatelných nákladů zpět na váš účet.</p>
+            </div>
+            <div class="p-8 bg-white/5 border border-white/5 rounded-2xl">
+                <i class="fas fa-bolt text-green-500 text-3xl mb-4"></i>
+                <h3 class="text-xl font-black mb-2 uppercase italic">Nabíjení</h3>
+                <p class="text-sm text-gray-400">Dotace se vztahuje i na infrastrukturu v areálu.</p>
+            </div>
+            <div class="p-8 bg-white/5 border border-white/5 rounded-2xl">
+                <i class="fas fa-file-contract text-green-500 text-3xl mb-4"></i>
+                <h3 class="text-xl font-black mb-2 uppercase italic">Na klíč</h3>
+                <p class="text-sm text-gray-400">Administrativa od první schůzky po vyplacení.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="kontakt" class="py-16 bg-black px-6 relative">
+        <div class="max-w-xl mx-auto text-center">
+            <h2 class="text-3xl font-black mb-8 uppercase italic leading-tight">POJĎME TO <span class="text-green-500">PROBRAT</span></h2>
+            <div class="bg-white/5 p-8 rounded-2xl border border-white/10">
+                <div class="mb-6 text-sm text-gray-300 space-y-2">
+                    <p><i class="fas fa-envelope text-green-500 mr-2"></i> jan.koukal@k-unit.cz</p>
+                    <p><i class="fas fa-phone text-green-500 mr-2"></i> +420 604 353 393</p>
+                </div>
+                <form class="space-y-4">
+                    <input type="text" placeholder="Jméno" class="w-full bg-black border border-white/10 rounded-lg px-4 py-3 focus:border-green-500 outline-none text-sm">
+                    <input type="email" placeholder="E-mail" class="w-full bg-black border border-white/10 rounded-lg px-4 py-3 focus:border-green-500 outline-none text-sm">
+                    <textarea placeholder="Vaše zpráva" rows="3" class="w-full bg-black border border-white/10 rounded-lg px-4 py-3 focus:border-green-500 outline-none text-sm"></textarea>
+                    <button class="w-full bg-green-600 hover:bg-green-500 text-black font-black py-4 rounded-lg uppercase italic transition">
+                        ODESLAT POPTÁVKU
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 border-t border-white/5 text-center text-[10px] text-gray-600 font-bold uppercase tracking-widest leading-loose">
+        <p>© 2026 K-UNIT | Bc. Jan Koukal | IČO: 21225753 <br> DOTAČNÍ SPECIALIZACE PRO E-MOBILITY</p>
+    </footer>
+
+</body>
+</html>
