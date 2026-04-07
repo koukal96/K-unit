@@ -161,17 +161,24 @@
             </div>
             
             <div class="glass p-8 rounded-3xl shadow-2xl">
-                <form class="space-y-4 font-black italic">
-                    <input type="text" placeholder="JMÉNO A PŘÍJMENÍ" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 focus:border-green-500 outline-none text-xs transition placeholder:text-gray-600">
-                    <input type="email" placeholder="FIREMNÍ E-MAIL" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 focus:border-green-500 outline-none text-xs transition placeholder:text-gray-600">
-                    <textarea placeholder="VAŠE ZPRÁVA / DOTAZ..." rows="4" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 focus:border-green-500 outline-none text-xs transition placeholder:text-gray-600"></textarea>
-                    <button class="w-full bg-green-600 hover:bg-green-500 text-black py-5 rounded-xl text-sm transition shadow-lg shadow-green-500/20 active:scale-95 uppercase">
-                        ODESLAT ŽÁDOST O ANALÝZU
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
+    <form action="https://formspree.io/f/jan.koukal96@gmail.com" method="POST" class="space-y-4 font-black italic">
+        
+        <input type="text" name="jmeno" placeholder="JMÉNO A PŘÍJMENÍ" required
+            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 focus:border-green-500 outline-none text-xs transition placeholder:text-gray-600">
+        
+        <input type="email" name="email" placeholder="FIREMNÍ E-MAIL" required
+            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 focus:border-green-500 outline-none text-xs transition placeholder:text-gray-600">
+        
+        <textarea name="zprava" placeholder="VAŠE ZPRÁVA / DOTAZ..." rows="4" required
+            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 focus:border-green-500 outline-none text-xs transition placeholder:text-gray-600"></textarea>
+        
+        <input type="hidden" name="_subject" value="Nová poptávka z webu K-UNIT">
+
+        <button type="submit" class="w-full bg-green-600 hover:bg-green-500 text-black py-5 rounded-xl text-sm transition shadow-lg shadow-green-500/20 active:scale-95 uppercase">
+            ODESLAT ŽÁDOST O ANALÝZU
+        </button>
+    </form>
+</div>
 
     <footer class="py-12 border-t border-white/5 text-center text-[9px] text-gray-700 tracking-[0.3em] font-black uppercase">
         <p>© 2026 K-UNIT | Bc. Jan Koukal | IČO: 21225753 <br> DOTAČNÍ MANAGEMENT PRO E-MOBILITY</p>
