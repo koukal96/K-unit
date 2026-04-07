@@ -6,6 +6,8 @@
     <title>K-UNIT | 2026 E-Mobility Operational Intelligence</title>
     
     <meta name="description" content="Specialista na dotační management a technickou dokumentaci pro rok 2026. Získejte až 2,25 milionu Kč na elektrokamion.">
+    <meta property="og:title" content="K-UNIT | Dotační architektura pro e-mobility">
+    <meta property="og:description" content="Nekončíme u vyplnění formuláře. Navrhujeme dotační architekturu, která šetří cash-flow.">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -28,7 +30,7 @@
 
         .font-heading { font-family: 'Inter', sans-serif; }
 
-        /* --- Scifi Grid & Green elements --- */
+        /* --- Scifi Grid & Green elements - "Totální bomby" --- */
         .scifi-bg {
             background-image: 
                 radial-gradient(circle at 10% 10%, rgba(34, 197, 94, 0.15) 0%, transparent 40%),
@@ -39,7 +41,7 @@
             background-attachment: fixed;
         }
 
-        /* --- Glass Panels --- */
+        /* --- Glass Panel Ultra --- */
         .module-card {
             background: rgba(10, 10, 10, 0.7);
             backdrop-blur: 20px;
@@ -53,15 +55,17 @@
             transform: translateY(-2px);
         }
 
+        /* --- Neon Text Glow (Silnější) --- */
         .text-neon {
             color: var(--neon);
             text-shadow: 0 0 10px var(--neon-glow), 0 0 20px rgba(34, 197, 94, 0.4);
         }
 
+        /* --- Reveal Animation --- */
         .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
-        /* --- SCANIA MODUL - FOCUS NA PŘEDEK (PRAVÁ STRANA) --- */
+        /* --- SCANIA KUBERNETICKÝ MODUL - FOCUS NA PŘEDEK --- */
         .scania-module {
             position: relative;
             width: 100%;
@@ -69,7 +73,7 @@
             border-radius: 30px;
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: transform 0.1s ease-out;
+            transition: transform 0.1s ease-out; /* Pro parallax efekt */
             transform-style: preserve-3d;
             perspective: 1000px;
             box-shadow: 0 0 15px rgba(34, 197, 94, 0.1);
@@ -79,16 +83,11 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            /* UPRAVENO: Posunuto DOPRAVA, aby byl vidět předek kamionu */
+            /* UPRAVENO: Posunuto DOPRAVA, aby byl vidět celý čumák Scanie */
             object-position: right center; 
             transform: scale(1.1); /* Mírné zvětšení pro parallax */
             filter: grayscale(0.2) contrast(1.1);
-            transition: all 0.5s ease;
-        }
-
-        .scania-module:hover .scania-img {
-            filter: grayscale(0) contrast(1.15);
-            transform: scale(1.15);
+            transition: filter 0.5s ease;
         }
 
         /* Neonový scanner efekt na hover */
@@ -107,28 +106,21 @@
             animation: scan 2s infinite;
         }
 
+        .scania-module:hover .scania-img {
+            filter: grayscale(0) contrast(1.1);
+        }
+
         @keyframes scan { 0% { top: -100%; } 100% { top: 100%; } }
 
-        /* --- Pulzování --- */
-        .neon-pulse { animation: neon-pulse-anim 2s infinite; }
+        /* --- Pulzující neonové prvky --- */
+        .neon-pulse {
+            animation: neon-pulse-anim 2s infinite;
+        }
+
         @keyframes neon-pulse-anim {
             0%, 100% { box-shadow: 0 0 10px rgba(34, 197, 94, 0.2); }
             50% { box-shadow: 0 0 30px rgba(34, 197, 94, 0.5); }
-        }
-
-        /* --- Blikající tečka --- */
-        .status-dot {
-            width: 10px;
-            height: 10px;
-            background-color: var(--neon);
-            border-radius: 50%;
-            box-shadow: 0 0 10px var(--neon);
-            animation: dot-blink 1.5s infinite;
-        }
-
-        @keyframes dot-blink {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.3; transform: scale(1.1); }
+            100% { box-shadow: 0 0 10px rgba(34, 197, 94, 0.2); }
         }
     </style>
 </head>
@@ -139,16 +131,17 @@
     </a>
 
     <nav class="fixed top-0 w-full z-[100] px-6 py-6 transition-all duration-500 font-heading italic uppercase tracking-tighter">
-        <div class="max-w-[1400px] mx-auto flex justify-between items-center bg-black/60 backdrop-blur-xl border border-white/5 rounded-2xl p-4 shadow-[0_10px_30px_-5px_rgba(34,197,94,0.15)]">
+        <div class="max-w-[1400px] mx-auto flex justify-between items-center bg-black/60 backdrop-blur-xl border border-white/5 rounded-2xl p-4 shadow-[0_10px_30px_-5px_rgba(34,197,94,0.15)] rounded-t-xl">
+            
             <div class="flex items-center gap-3">
                 <div class="w-1.5 h-6 bg-green-500 rounded-full shadow-[0_0_15px_#22c55e]"></div>
                 <span class="text-xl md:text-2xl">K-<span class="text-neon">UNIT</span></span>
             </div>
             
-            <div class="hidden lg:flex items-center gap-12 text-sm uppercase font-black tracking-[0.2em] text-gray-400">
-                <a href="#moznosi" class="hover:text-neon transition">Dotace</a>
-                <a href="#o-mne" class="hover:text-neon transition">Expertíza</a>
-                <a href="#kontakt" class="hover:text-neon transition">Kontakt</a>
+            <div class="hidden lg:flex items-center gap-8 text-[9px] uppercase font-bold tracking-[0.3em] text-gray-500">
+                <a href="#moznosi" class="hover:text-green-500 transition hover:neon-glow hover:text-white">Dotace</a>
+                <a href="#o-mne" class="hover:text-green-500 transition hover:neon-glow hover:text-white">Expertíza</a>
+                <a href="#kontakt" class="hover:text-green-500 transition hover:neon-glow hover:text-white">Kontakt</a>
             </div>
             
             <a href="#kontakt" class="bg-green-600 text-black px-6 py-2.5 rounded-xl font-heading italic uppercase text-[10px] hover:bg-green-500 transition-all active:scale-95 neon-pulse shadow-lg shadow-green-500/20">
@@ -160,7 +153,7 @@
     <header class="relative min-h-screen flex items-center px-6 pt-28 pb-16 overflow-hidden">
         <div class="max-w-[1400px] mx-auto w-full grid lg:grid-cols-2 gap-16 items-center reveal active">
             
-            <div class="z-10 order-2 lg:order-1 text-center md:text-left relative">
+            <div class="z-10 order-2 lg:order-1 text-center md:text-left">
                 <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-green-500/10 border border-green-500/20 rounded-lg text-green-500 text-[10px] font-bold tracking-[0.4em] mb-8 uppercase italic shadow-inner">
                     <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
                      Operational Intelligence 2026
@@ -169,11 +162,14 @@
                     Dotační <br> <span class="text-neon">Architektura</span> <br> E-Mobility
                 </h1>
                 <p class="text-gray-400 text-base md:text-lg max-w-md font-light leading-relaxed mb-10 mx-auto md:mx-0">
-                    Získejte až <span class="text-white font-bold">2,25 milionu Kč</span> na jeden elektrokamion. Navrhujeme procesy, které šetří vaše cash-flow a modernizují vozový park.
+                    Získejte až <span class="text-white font-bold">2,25 milionu Kč</span> na jeden elektrokamion. Navrhujeme procesy, které šetří vaše cash-flow a modernizují vozový park bez administrativní zátěže.
                 </p>
                 <div class="flex flex-wrap gap-5 justify-center md:justify-start">
-                    <a href="#kontakt" class="bg-white text-black px-10 py-5 rounded-xl font-heading italic uppercase text-xs hover:bg-green-600 hover:text-white transition shadow-2xl">
+                    <a href="#kontakt" class="bg-white text-black px-10 py-5 rounded-xl font-heading italic uppercase text-xs hover:bg-green-600 hover:text-white transition shadow-[0_10px_20px_rgba(255,255,255,0.05)] hover:shadow-glow">
                         Zahájit analýzu
+                    </a>
+                    <a href="https://wa.me/420604353393" target="_blank" class="border border-white/10 px-10 py-5 rounded-xl font-heading italic uppercase text-xs hover:bg-white hover:text-black transition flex items-center gap-3">
+                        <i class="fab fa-whatsapp text-lg text-green-500 transition group-hover:scale-110"></i> WhatsApp
                     </a>
                 </div>
             </div>
@@ -184,10 +180,11 @@
                     
                     <div class="absolute top-10 left-10 flex items-center gap-3 bg-black/40 p-4 rounded-xl backdrop-blur-sm border border-white/10">
                         <div class="text-[9px] text-green-500 font-bold tracking-[0.4em] uppercase animate-pulse">Status</div>
-                        <div class="status-dot"></div>
+                        <div class="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_10px_#22c55e]"></div>
+                        <div class="text-sm font-heading italic uppercase text-white">OK</div>
                     </div>
                 </div>
-                <div class="absolute -bottom-6 -left-6 module-card p-6 rounded-2xl shadow-2xl z-20 border-green-500/40 neon-pulse hover:scale-105 transition">
+                <div class="absolute -bottom-6 -left-6 module-card p-6 rounded-2xl shadow-2xl z-20 border-green-500/30 neon-pulse delay-500 hover:scale-105 transition">
                     <div class="text-green-500 font-heading italic text-3xl leading-none text-neon">Až 50%</div>
                     <div class="text-[9px] uppercase tracking-[0.2em] text-gray-500 mt-1">Pokrytí nákladů</div>
                 </div>
@@ -197,21 +194,22 @@
     </header>
 
     <section id="moznosi" class="py-28 px-6 relative reveal">
-        <div class="max-w-[1400px] mx-auto">
+        <div class="max-w-[1400px] mx-auto relative z-10">
             <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
                 <div class="lg:col-span-4 space-y-5">
                     <h2 class="font-heading italic uppercase text-4xl mb-10 tracking-tighter text-white/90">Výše <span class="text-neon">Podpory</span></h2>
                     <div class="module-card p-6 rounded-2xl flex justify-between items-center border-2 border-green-500 neon-pulse">
                         <span class="text-[11px] uppercase font-bold tracking-widest text-neon">Malé firmy</span>
                         <span class="text-3xl font-heading italic text-neon">50 %</span>
                     </div>
-                    <div class="module-card p-6 rounded-2xl flex justify-between items-center border border-white/10 hover:border-green-500 transition">
+                    <div class="module-card p-6 rounded-2xl flex justify-between items-center border border-white/10 hover:border-green-500 hover:neon-pulse transition">
                         <span class="text-[11px] uppercase font-bold tracking-widest text-gray-400">Střední firmy</span>
                         <span class="text-3xl font-heading italic text-white/80">40 %</span>
                     </div>
-                    <div class="module-card p-6 rounded-2xl flex justify-between items-center border border-white/10 hover:border-green-500 transition">
+                    <div class="module-card p-6 rounded-2xl flex justify-between items-center border border-white/10 hover:border-green-500 hover:neon-pulse transition">
                         <span class="text-[11px] uppercase font-bold tracking-widest text-gray-400">Velké firmy</span>
-                        <span class="text-3xl font-heading italic text-gray-600">30 %</span>
+                        <span class="text-3xl font-heading italic text-gray-600 hover:text-white">30 %</span>
                     </div>
                 </div>
 
@@ -219,14 +217,15 @@
                     <div class="module-card p-9 rounded-3xl group overflow-hidden">
                         <i class="fas fa-microchip text-3xl text-green-500/60 mb-8 transition group-hover:text-green-500"></i>
                         <h3 class="font-heading italic uppercase text-xl mb-4 tracking-tight">Dotační Management</h3>
-                        <p class="text-gray-500 text-sm leading-relaxed font-light">Kompletní správa žádosti, technická dokumentace a komunikace se státními fondy.</p>
+                        <p class="text-gray-500 text-sm leading-relaxed font-light normal-case not-italic">Kompletní správa žádosti, technická dokumentace a komunikace se státními fondy bez vaší administrativní zátěže.</p>
                     </div>
                     <div class="module-card p-9 rounded-3xl group overflow-hidden">
                         <i class="fas fa-charging-station text-3xl text-green-500/60 mb-8 transition group-hover:text-green-500"></i>
                         <h3 class="font-heading italic uppercase text-xl mb-4 tracking-tight">Infrastruktura</h3>
-                        <p class="text-gray-500 text-sm leading-relaxed font-light">Návrh a dotační zajištění pro vlastní nabíjecí body ve vašich areálech.</p>
+                        <p class="text-gray-500 text-sm leading-relaxed font-light normal-case not-italic">Návrh a dotační zajištění pro vlastní nabíjecí body přímo ve vašich logistických areálech.</p>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -236,8 +235,13 @@
         <div class="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-20 items-center">
             <div class="relative flex justify-center order-2 lg:order-1 relative">
                 <div class="absolute -inset-6 bg-green-500/10 rounded-full blur-3xl opacity-50 pulse-glow"></div>
-                <div class="w-72 h-72 md:w-80 md:h-80 rounded-full flex items-center justify-center overflow-hidden border-2 border-green-500/20 shadow-[0_0_40px_rgba(34,197,94,0.2)] relative pulse-glow">
+                
+                <div class="absolute -top-5 -left-5 w-6 h-6 border-t-2 border-l-2 border-green-500/30"></div>
+                <div class="absolute -bottom-5 -right-5 w-6 h-6 border-b-2 border-r-2 border-green-500/30"></div>
+                
+                <div class="w-72 h-72 md:w-80 md:h-80 glass-panel rounded-full flex items-center justify-center overflow-hidden border-2 border-green-500/20 shadow-[0_0_40px_rgba(34,197,94,0.2)] relative pulse-glow">
                     <i class="fas fa-user-tie text-green-500/40 text-[140px] animate-pulse"></i>
+                    <div class="absolute inset-0 bg-green-500/5 rounded-full shadow-inner"></div>
                 </div>
                 <div class="absolute -bottom-5 bg-green-600 text-black px-8 py-2.5 rounded-lg text-xs shadow-2xl font-black italic uppercase tracking-wider neon-pulse">
                     FOUNDER | DOTAČNÍ INŽENÝR
@@ -245,7 +249,7 @@
             </div>
             <div class="text-center md:text-left order-1 lg:order-2">
                 <h2 class="font-heading italic uppercase text-4xl md:text-5xl mb-8 uppercase tracking-tighter font-black italic">Bc. Jan <span class="text-green-500 neon-glow">Koukal</span></h2>
-                <p class="text-gray-400 text-lg font-light leading-relaxed mb-10">
+                <p class="text-gray-400 text-lg font-light leading-relaxed mb-10 normal-case not-italic font-light">
                     Specializuji se na dotační management v oblasti těžké a udržitelné mobility pro rok 2026. Odstraňuji bariéry mezi vizí udržitelné dopravy a realitou financování českých dopravních firem.
                 </p>
                 <div class="inline-block border-l-4 border-green-500 pl-8 text-left glass-panel-light p-5 rounded-r-xl border border-white/5">
@@ -258,10 +262,10 @@
 
     <section id="kontakt" class="py-28 px-6 reveal">
         <div class="max-w-[1400px] mx-auto bg-white text-black rounded-[40px] overflow-hidden grid lg:grid-cols-2 shadow-[0_30px_100px_rgba(34,197,94,0.1)] relative border border-white/5">
-            <div class="p-10 md:p-16 flex flex-col justify-between bg-zinc-50 border-r border-black/5 relative">
+            <div class="p-10 md:p-16 flex flex-col justify-between bg-zinc-50 border-r border-black/5 relative relative">
                 <div>
                     <h2 class="font-heading italic uppercase text-5xl md:text-6xl mb-12 tracking-tighter leading-none">Zahájit <br> <span class="text-green-600">Integraci.</span></h2>
-                    <div class="space-y-6">
+                    <div class="space-y-6 relative z-10">
                         <a href="mailto:jan.koukal96@gmail.com" class="flex items-center gap-5 hover:text-green-600 transition group">
                             <i class="fas fa-envelope w-5 group-hover:scale-110"></i>
                             <span class="font-heading italic uppercase text-sm">jan.koukal96@gmail.com</span>
@@ -270,7 +274,7 @@
                             <i class="fas fa-phone w-5 group-hover:scale-110"></i>
                             <span class="font-heading italic uppercase text-sm">+420 604 353 393</span>
                         </a>
-                        <div class="pt-8 border-t border-black/5 mt-8 text-left relative">
+                        <div class="pt-8 border-t border-black/5 mt-8 text-left">
                             <div class="text-[8px] font-bold uppercase tracking-[0.3em] text-gray-400 mb-2">Identifikace</div>
                             <div class="font-heading italic uppercase text-xs">Bc. Jan Koukal | IČO: 21225753</div>
                         </div>
@@ -278,13 +282,12 @@
                 </div>
             </div>
             
-            <div class="p-10 md:p-16 bg-white font-black italic relative">
+            <div class="p-10 md:p-16 bg-white font-black italic relative z-10 relative">
                 <form id="contactForm" class="space-y-5">
-                    <input type="text" name="name" placeholder="Celé jméno" required data-fs-field class="w-full bg-zinc-100 border-none rounded-xl p-5 outline-none focus:ring-2 focus:ring-green-500 transition text-sm">
-                    <input type="email" name="email" placeholder="E-mail" required data-fs-field class="w-full bg-zinc-100 border-none rounded-xl p-5 outline-none focus:ring-2 focus:ring-green-500 transition text-sm">
-                    <textarea name="message" placeholder="Specifikace projektu / dotaz" rows="4" required data-fs-field class="w-full bg-zinc-100 border-none rounded-xl p-5 outline-none focus:ring-2 focus:ring-green-500 transition text-sm"></textarea>
-                    <div data-fs-error class="text-red-500 text-[10px] uppercase font-bold p-1"></div>
-                    <button type="submit" data-fs-submit-btn class="w-full bg-black text-white py-6 rounded-xl font-heading italic uppercase text-sm hover:bg-green-600 transition shadow-lg active:scale-95 pulse-glow tracking-wider">
+                    <input type="text" name="name" placeholder="Celé jméno" required class="w-full bg-zinc-100 border-none rounded-xl p-5 outline-none focus:ring-2 focus:ring-green-500 transition text-sm">
+                    <input type="email" name="email" placeholder="E-mail" required class="w-full bg-zinc-100 border-none rounded-xl p-5 outline-none focus:ring-2 focus:ring-green-500 transition text-sm">
+                    <textarea name="message" placeholder="Specifikace projektu / dotaz" rows="4" required class="w-full bg-zinc-100 border-none rounded-xl p-5 outline-none focus:ring-2 focus:ring-green-500 transition text-sm"></textarea>
+                    <button type="submit" class="w-full bg-black text-white py-6 rounded-xl font-heading italic uppercase text-sm hover:bg-green-600 transition shadow-lg active:scale-95 neon-pulse tracking-wider">
                         <i class="fas fa-paper-plane mr-2 text-xs"></i> Odeslat k analýze
                     </button>
                 </form>
@@ -300,39 +303,25 @@
         <p>K-UNIT | 2026 E-Mobility Operational Intelligence | Bc. Jan Koukal | Všechna práva vyhrazena</p>
     </footer>
 
-    <div id="thankYouModal" data-fs-success class="fixed inset-0 z-[200] hidden items-center justify-center px-4 backdrop-blur-3xl bg-black/90">
-        <div class="module-card max-w-sm w-full p-12 rounded-[30px] text-center border-green-500 shadow-[0_0_60px_rgba(34,197,94,0.3)] neon-pulse active">
-            <div class="w-20 h-20 bg-green-500 text-black rounded-full flex items-center justify-center mx-auto mb-8 shadow-glow">
+    <div id="thankYouModal" class="fixed inset-0 z-[200] hidden items-center justify-center px-4 backdrop-blur-3xl bg-black/90">
+        <div class="module-card max-w-sm w-full p-12 rounded-[30px] text-center border-green-500 shadow-[0_0_60px_rgba(34,197,94,0.3)] neon-pulse relative overflow-hidden active">
+            <div class="cyber-ind top-4 left-4"></div>
+            <div class="cyber-ind top-4 right-4"></div>
+            <div class="cyber-ind bottom-4 left-4"></div>
+            <div class="cyber-ind bottom-4 right-4"></div>
+            
+            <div class="w-20 h-20 bg-green-500 text-black rounded-full flex items-center justify-center mx-auto mb-8 neon-pulse">
                 <i class="fas fa-check text-3xl"></i>
             </div>
             <h2 class="font-heading italic uppercase text-3xl mb-5 text-green-500 neon-glow">Odesláno.</h2>
-            <p class="text-gray-400 text-xs mb-10 leading-relaxed normal-case not-italic font-light text-center">Data byla přijata. Ozveme se vám k analýze do 24 hodin.</p>
+            <p class="text-gray-400 text-xs mb-10 leading-relaxed normal-case not-italic font-light text-center">Data byla přijata a šifrována. Ozveme se vám k analýze do 24 hodin.</p>
             <button onclick="closeModal()" class="w-full bg-white text-black py-4.5 rounded-xl font-heading italic uppercase text-[10px] hover:bg-green-500 hover:text-white transition active:scale-95">
                 Zpět
             </button>
         </div>
     </div>
 
-    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
     <script>
-        // --- Formspree Setup ---
-        window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
-        formspree('initForm', { 
-            formElement: '#contactForm', 
-            formId: 'xjgplprp',
-            onSuccess: function() {
-                const modal = document.getElementById('thankYouModal');
-                modal.classList.remove('hidden');
-                modal.classList.add('flex');
-                document.getElementById('contactForm').reset();
-            }
-        });
-
-        function closeModal() {
-            document.getElementById('thankYouModal').classList.add('hidden');
-            document.getElementById('thankYouModal').classList.remove('flex');
-        }
-
         // --- Intersection Observer for Reveal ---
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
